@@ -157,8 +157,13 @@ def word_lengths(words):
         >>> word_lengths(["hello", "hey", "hello", "spam"])
         [5, 3, 5, 4]
     """
+    
+    lengths = []
 
-    return []
+    for word in words:
+        lengths.append(len(word))
+
+    return lengths
 
 
 def sum_numbers(numbers):
@@ -177,7 +182,12 @@ def sum_numbers(numbers):
         0
     """
 
-    return None
+    total_sum = 0
+
+    for num in numbers:
+        total_sum += num
+    
+    return total_sum
 
 
 def mult_numbers(numbers):

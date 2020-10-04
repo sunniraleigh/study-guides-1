@@ -114,7 +114,15 @@ def largest_int(numbers):
         True
     """
 
-    return 0
+    if numbers == []:
+        return None
+    else:
+        n = numbers[0]
+        for num in numbers:
+            if num > n:
+                n = num
+    
+        return n
 
 
 def halvesies(numbers):
@@ -132,7 +140,13 @@ def halvesies(numbers):
         [0.5, 2.5]
     """
 
-    return []
+    half_numbers = []
+
+    for num in numbers:
+        half = num / 2
+        half_numbers.append(half)
+    
+    return half_numbers
 
 
 def word_lengths(words):

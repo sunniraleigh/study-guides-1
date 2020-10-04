@@ -283,7 +283,15 @@ def join_strings_with_comma(words):
         'Pretzel'
     """
 
-    return ""
+    joined_string = ""
+
+    joined_string = ""
+    for word in words:
+        joined_string = joined_string + word
+        if words[-1] != word:
+            joined_string += ", "
+    
+    return joined_string
 
 
 def reverse_list(items):
@@ -307,7 +315,12 @@ def reverse_list(items):
         ['apple', 'berry', 'cherry']
     """
 
-    return []
+    reversed_items = []
+    
+    for item in items:
+        reversed_items = [item] + reversed_items[:]
+
+    return items[::-1]
 
 
 def reverse_list_in_place(items):
@@ -330,7 +343,8 @@ def reverse_list_in_place(items):
         ['I', 'love', 'cookies']
     """
 
-    return []
+    items[:] = items[::-1]
+    # also would have worked: items[:] = items[-1] + items[:-1]
 
 
 def duplicates(items):
@@ -356,7 +370,14 @@ def duplicates(items):
         ['apple', 'apple', 'berry']
     """
 
-    return []
+    duplicate_items = []
+
+    for item in items:
+        if items.count(item) >= 2:
+            if item not in duplicate_items:
+                duplicate_items.append(item)
+    
+    return duplicate_items
 
 
 def find_letter_indices(words, letter):
@@ -384,8 +405,20 @@ def find_letter_indices(words, letter):
     `None`.)
     """
 
-    return []
+    letter_indices = []
 
+    for word in words:
+        if letter in word:
+            index_counter = -1
+            for l in word:
+                index_counter += 1
+                if l == letter:
+                    letter_indices.append(index_counter)
+
+        else:
+            letter_indices.append(None) 
+
+    return letter_indices
 
 #####################################################################
 # END OF PRACTICE: You can ignore everything below.

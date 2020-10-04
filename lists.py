@@ -60,7 +60,13 @@ def n_long_words(words, n):
         ['apples', 'bananas']
     """
 
-    return ['the wrong thing']
+    words_greater_than_n = []
+
+    for word in words:
+        if len(word) > n:
+            words_greater_than_n.append(word)
+    
+    return(words_greater_than_n)
 
 
 def smallest_int(numbers):
@@ -80,7 +86,15 @@ def smallest_int(numbers):
         True
     """
 
-    return 100
+    if numbers == []:
+        return None
+    else:
+        n = numbers[0]
+        for num in numbers:
+            if num < n:
+                n = num
+    
+        return n
 
 
 def largest_int(numbers):
